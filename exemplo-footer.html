@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Responsivo com Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Conteúdo da Página */
+        .page-content {
+            flex: 1;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+        
+        .page-content h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .page-content p {
+            color: #7f8c8d;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer Estilo 1: Footer Completo */
+        .footer-complete {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+        
+        .footer-section {
+            flex: 1 1 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section p {
+            color: #bdc3c7;
+            line-height: 1.6;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #3498db;
+        }
+        
+        /* Social Icons */
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #34495e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: #3498db;
+            transform: translateY(-3px);
+        }
+        
+        /* Newsletter */
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-button {
+            padding: 0.7rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Footer Bottom */
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 1rem;
+            text-align: center;
+            color: #95a5a6;
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #95a5a6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Footer Estilo 2: Footer Simples */
+        .footer-simple {
+            background-color: #34495e;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .footer-simple-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-simple-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        /* Footer Estilo 3: Footer com Grid */
+        .footer-grid {
+            background-color: #1a252f;
+            color: white;
+            padding: 3rem 2rem;
+        }
+        
+        .footer-grid-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-column {
+            flex: 1 1 200px;
+        }
+        
+        .footer-column h4 {
+            color: #3498db;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #bdc3c7;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .footer-content,
+            .footer-grid-content {
+                flex-direction: column;
+            }
+            
+            .footer-bottom-content,
+            .footer-simple-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links,
+            .footer-simple-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .footer-social {
+                justify-content: center;
+            }
+        }
+        
+        /* Estilo para separação dos exemplos */
+        .example-separator {
+            height: 3rem;
+            background: linear-gradient(to bottom, #f8f9fa, white);
+        }
+        
+        .example-label {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Conteúdo Principal -->
+    <div class="page-content">
+        <h1>Exemplos de Footer Responsivo com Flexbox</h1>
+        <p>
+            O footer é uma parte essencial de qualquer website. Com Flexbox, podemos criar footers 
+            responsivos e bem estruturados de forma simples e eficiente.
+        </p>
+        <p>
+            Abaixo você encontrará três exemplos diferentes de footers, cada um demonstrando 
+            diferentes técnicas e estilos usando Flexbox.
+        </p>
+        <p>
+            <strong>Características principais dos footers com Flexbox:</strong>
+        </p>
+        <ul style="margin-left: 2rem; color: #7f8c8d;">
+            <li>Distribuição automática de espaço entre seções</li>
+            <li>Alinhamento vertical perfeito</li>
+            <li>Responsividade natural com flex-wrap</li>
+            <li>Fácil manutenção e modificação</li>
+        </ul>
+    </div>
+    
+    <!-- Exemplo 1: Footer Completo -->
+    <div class="example-label">Exemplo 1: Footer Completo com Múltiplas Seções</div>
+    <footer class="footer-complete">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>Somos uma empresa dedicada a criar soluções incríveis para nossos clientes usando as melhores tecnologias web.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#documentacao">Documentação</a></li>
+                    <li><a href="#suporte">Suporte</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#api">API</a></li>
+                    <li><a href="#status">Status</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Receba nossas atualizações e novidades</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Seu e-mail">
+                    <button type="submit" class="newsletter-button">Assinar</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 MeuSite. Todos os direitos reservados.</p>
+                <ul class="footer-links">
+                    <li><a href="#privacidade">Privacidade</a></li>
+                    <li><a href="#termos">Termos de Uso</a></li>
+                    <li><a href="#cookies">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="example-separator"></div>
+    
+    <!-- Exemplo 2: Footer Simples -->
+    <div class="example-label">Exemplo 2: Footer Simples e Direto</div>
+    <footer class="footer-simple">
+        <div class="footer-simple-content">
+            <div>
+                <strong style="color: #3498db; font-size: 1.2rem;">MinhaEmpresa</strong>
+                <p style="color: #95a5a6; margin-top: 0.5rem;">&copy; 2024 Todos os direitos reservados</p>
+            </div>
+            <ul class="footer-simple-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#privacidade">Privacidade</a></li>
+                <li><a href="#termos">Termos</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#" class="social-icon">f</a>
+                <a href="#" class="social-icon">t</a>
+                <a href="#" class="social-icon">in</a>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="example-separator"></div>
+    
+    <!-- Exemplo 3: Footer com Grid de Informações -->
+    <div class="example-label">Exemplo 3: Footer com Informações de Contato</div>
+    <footer class="footer-grid">
+        <div class="footer-grid-content">
+            <div class="footer-column">
+                <h4>Empresa</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Sobre Nós</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Nossa Equipe</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Carreiras</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Parceiros</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Produtos</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Recursos</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Preços</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Demos</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Atualizações</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Suporte</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Central de Ajuda</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Documentação</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Tutoriais</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #bdc3c7; text-decoration: none;">Comunidade</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contato</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>contato@exemplo.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>(11) 99999-9999</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>São Paulo, SP - Brasil</span>
+                    </div>
+                </div>
+                <div class="footer-social" style="margin-top: 1rem;">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="border-top: 1px solid #34495e; margin-top: 2rem; padding-top: 1rem; text-align: center; color: #95a5a6;">
+            <p>© 2024 MeuSite. Desenvolvido com ❤️ usando Flexbox</p>
+        </div>
+    </footer>
+</body>
+</html>

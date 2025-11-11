@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Responsivos com Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 2rem;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #7f8c8d;
+        }
+        
+        /* Container de Cards */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        /* Card Básico */
+        .card {
+            flex: 1 1 300px;
+            max-width: 350px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .card-description {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .card-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .card-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .card-price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        
+        /* Cards Horizontais */
+        .card-horizontal {
+            display: flex;
+            flex-direction: row;
+            flex: 1 1 600px;
+            max-width: 800px;
+        }
+        
+        .card-horizontal .card-image {
+            flex: 0 0 250px;
+            height: auto;
+        }
+        
+        /* Card com Tags */
+        .card-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .tag {
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        /* Card com Ícones */
+        .card-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem 0;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .stat-icon {
+            font-size: 1.5rem;
+        }
+        
+        .stat-value {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+        
+        /* Grid de Cards */
+        .section-title {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        /* Cores alternativas para cards */
+        .card-image.green {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        
+        .card-image.red {
+            background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
+        }
+        
+        .card-image.orange {
+            background: linear-gradient(135deg, #f79d00 0%, #64f38c 100%);
+        }
+        
+        .card-image.blue {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .card-image.purple {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplos de Cards Responsivos com Flexbox</h1>
+    <p class="intro">Cards flexíveis que se adaptam a diferentes tamanhos de tela</p>
+    
+    <!-- Cards Básicos de Preços -->
+    <h2 class="section-title">Cards de Preços</h2>
+    <div class="cards-container">
+        <div class="card">
+            <div class="card-image purple">📱</div>
+            <div class="card-content">
+                <h3 class="card-title">Plano Básico</h3>
+                <p class="card-description">
+                    Perfeito para iniciantes que querem começar com recursos essenciais.
+                </p>
+                <div class="card-footer">
+                    <span class="card-price">R$ 29,90</span>
+                    <button class="card-button">Escolher</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-image blue">💼</div>
+            <div class="card-content">
+                <h3 class="card-title">Plano Pro</h3>
+                <p class="card-description">
+                    Para profissionais que precisam de recursos avançados e suporte prioritário.
+                </p>
+                <div class="card-footer">
+                    <span class="card-price">R$ 79,90</span>
+                    <button class="card-button">Escolher</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-image green">🚀</div>
+            <div class="card-content">
+                <h3 class="card-title">Plano Enterprise</h3>
+                <p class="card-description">
+                    Solução completa para empresas com necessidades específicas e customização.
+                </p>
+                <div class="card-footer">
+                    <span class="card-price">R$ 199,90</span>
+                    <button class="card-button">Escolher</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cards Horizontais -->
+    <h2 class="section-title">Cards Horizontais</h2>
+    <div class="cards-container">
+        <div class="card card-horizontal">
+            <div class="card-image red">📚</div>
+            <div class="card-content">
+                <h3 class="card-title">Curso de Web Design</h3>
+                <p class="card-description">
+                    Aprenda a criar sites modernos e responsivos do zero. Inclui HTML, CSS, JavaScript e muito mais.
+                </p>
+                <div class="card-footer">
+                    <span class="card-price">R$ 149,90</span>
+                    <button class="card-button">Inscrever-se</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card card-horizontal">
+            <div class="card-image orange">💻</div>
+            <div class="card-content">
+                <h3 class="card-title">Bootcamp Full Stack</h3>
+                <p class="card-description">
+                    Programa intensivo de 12 semanas para se tornar um desenvolvedor full stack completo.
+                </p>
+                <div class="card-footer">
+                    <span class="card-price">R$ 2.499,90</span>
+                    <button class="card-button">Começar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cards com Tags e Estatísticas -->
+    <h2 class="section-title">Cards com Detalhes</h2>
+    <div class="cards-container">
+        <div class="card">
+            <div class="card-image blue">🎨</div>
+            <div class="card-content">
+                <h3 class="card-title">Design Responsivo</h3>
+                <div class="card-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Flexbox</span>
+                </div>
+                <p class="card-description">
+                    Domine as técnicas modernas de design responsivo com Flexbox e Grid.
+                </p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-value">4.8</span>
+                        <span class="stat-label">Avaliação</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">👥</span>
+                        <span class="stat-value">1.2K</span>
+                        <span class="stat-label">Alunos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⏱️</span>
+                        <span class="stat-value">8h</span>
+                        <span class="stat-label">Duração</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-image green">⚛️</div>
+            <div class="card-content">
+                <h3 class="card-title">React Avançado</h3>
+                <div class="card-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Hooks</span>
+                    <span class="tag">Redux</span>
+                </div>
+                <p class="card-description">
+                    Aprenda técnicas avançadas de React para criar aplicações escaláveis.
+                </p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-value">4.9</span>
+                        <span class="stat-label">Avaliação</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">👥</span>
+                        <span class="stat-value">2.5K</span>
+                        <span class="stat-label">Alunos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⏱️</span>
+                        <span class="stat-value">12h</span>
+                        <span class="stat-label">Duração</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-image purple">🔐</div>
+            <div class="card-content">
+                <h3 class="card-title">Segurança Web</h3>
+                <div class="card-tags">
+                    <span class="tag">Security</span>
+                    <span class="tag">HTTPS</span>
+                    <span class="tag">OAuth</span>
+                </div>
+                <p class="card-description">
+                    Proteja suas aplicações web contra as principais vulnerabilidades.
+                </p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-value">4.7</span>
+                        <span class="stat-label">Avaliação</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">👥</span>
+                        <span class="stat-value">980</span>
+                        <span class="stat-label">Alunos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-icon">⏱️</span>
+                        <span class="stat-value">6h</span>
+                        <span class="stat-label">Duração</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem; padding: 2rem; background-color: white; border-radius: 10px;">
+        <h2>Como Funciona?</h2>
+        <p style="color: #7f8c8d; max-width: 800px; margin: 1rem auto;">
+            Os cards usam <code>flex: 1 1 300px</code>, o que significa que eles podem crescer e encolher, 
+            mas têm uma base mínima de 300px. Com <code>flex-wrap: wrap</code>, eles quebram para a próxima 
+            linha quando não há espaço suficiente, tornando o layout automaticamente responsivo!
+        </p>
+    </div>
+</body>
+</html>
