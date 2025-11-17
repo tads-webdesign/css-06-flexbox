@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Responsiva com Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Exemplo 1: Navbar Básica */
+        .navbar-basic {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            padding: 1rem 2rem;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .nav-button {
+            background-color: #3498db;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Exemplo 2: Navbar com Logo Centralizada */
+        .navbar-center {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #34495e;
+            padding: 1rem 2rem;
+            color: white;
+        }
+        
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        
+        .logo-center {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        /* Exemplo 3: Navbar com Ícones */
+        .navbar-icons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #16a085;
+            padding: 1rem 2rem;
+            color: white;
+        }
+        
+        .nav-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .icon-button {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .icon-button:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .navbar-basic, .navbar-center, .navbar-icons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links, .nav-left, .nav-right {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .nav-icons {
+                justify-content: center;
+            }
+        }
+        
+        /* Estilo adicional para a página */
+        .demo-section {
+            margin-bottom: 2rem;
+        }
+        
+        .demo-label {
+            background-color: #ecf0f1;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Exemplos de Navbar com Flexbox</h1>
+        <p>Abaixo estão diferentes exemplos de navbars responsivas criadas com Flexbox:</p>
+    </div>
+    
+    <!-- Exemplo 1: Navbar Básica -->
+    <div class="demo-section">
+        <div class="demo-label">Exemplo 1: Navbar Básica</div>
+        <nav class="navbar-basic">
+            <div class="logo">MeuSite</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button class="nav-button">Login</button>
+        </nav>
+    </div>
+    
+    <!-- Exemplo 2: Navbar com Logo Centralizada -->
+    <div class="demo-section">
+        <div class="demo-label">Exemplo 2: Navbar com Logo Centralizada</div>
+        <nav class="navbar-center">
+            <ul class="nav-left">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+            <div class="logo-center">LOGO</div>
+            <ul class="nav-right">
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Exemplo 3: Navbar com Ícones -->
+    <div class="demo-section">
+        <div class="demo-label">Exemplo 3: Navbar com Ícones</div>
+        <nav class="navbar-icons">
+            <div class="logo">Brand</div>
+            <ul class="nav-links">
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#ajuda">Ajuda</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-button">🔍</button>
+                <button class="icon-button">🛒</button>
+                <button class="icon-button">👤</button>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="content">
+        <h2>Como Funciona?</h2>
+        <p><strong>Propriedades Principais:</strong></p>
+        <ul>
+            <li><code>display: flex;</code> - Transforma a navbar em um container flex</li>
+            <li><code>justify-content: space-between;</code> - Distribui espaço entre os elementos</li>
+            <li><code>align-items: center;</code> - Alinha elementos verticalmente no centro</li>
+            <li><code>gap: 2rem;</code> - Adiciona espaço entre os itens de navegação</li>
+        </ul>
+        
+        <h2>Responsividade</h2>
+        <p>Experimente redimensionar a janela do navegador. As navbars se adaptam automaticamente para telas menores, empilhando os elementos verticalmente.</p>
+    </div>
+</body>
+</html>
