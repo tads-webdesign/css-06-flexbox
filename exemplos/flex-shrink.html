@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-shrink - Flexbox - Exemplo de WebDesign</title>
+    <style>
+        * {
+            margin: 6px;
+        }
+
+        .container-narrow {
+            display: flex;
+            /* width: 400px; */
+            background-color: aliceblue;
+        }
+
+        .shrink-0 {
+            flex-shrink: 0;
+            /* Não encolhe */
+            /* width: 200px; */
+            min-width: 200px;
+        }
+
+        .shrink-1 {
+            flex-shrink: 1;
+            /* Encolhe normalmente */
+            /* width: 200px; */
+        }
+
+        .shrink-2 {
+            flex-shrink: 2;
+            /* Encolhe duas vezes mais rápido */
+            /* width: 200px; */
+        }
+
+        .item {
+            background-color: #3498db;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <head>
+        <h1>flex-shrink - Flexbox - Exemplo de WebDesign</h1>
+    </head>
+    <main>
+        <div class="container-narrow">
+            <div class="item shrink-0">Não encolhe</div>
+            <div class="item shrink-1">Pode encolher</div>
+            <div class="item shrink-2">Encolhe mais</div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-grow - Flexbox - Exemplo de WebDesign</title>
+    <style>
+        * {
+            padding: 6px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .grow-1 {
+            flex-grow: 1;
+            /* Cresce 1 unidade */
+            background-color: #3498db;
+        }
+
+        .grow-2 {
+            flex-grow: 2;
+            /* Cresce 2 unidades (ocupa o dobro) */
+            background-color: #e74c3c;
+        }
+
+        .item {
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <head>
+        <h1>flex-grow - Flexbox - Exemplo de WebDesign</h1>
+    </head>
+    <main>
+        <div class="container">
+            <div class="item grow-1">flex-grow: 1</div>
+            <div class="item grow-2">flex-grow: 2</div>
+            <div class="item grow-1">flex-grow: 1</div>
+        </div>
+    </main>
+</body>
+
+</html>

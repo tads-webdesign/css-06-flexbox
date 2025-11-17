@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justify-content - Flexbox - Exemplo de WebDesign</title>
+    <style>
+        * {
+            margin: 6px;
+        }
+
+        .container-center {
+            display: flex;
+            justify-content: flex-start;
+            background-color: aliceblue;
+            /* Início do container (padrão) */
+        }
+
+        .container-end {
+            display: flex;
+            justify-content: flex-end;
+            background-color: aliceblue;
+            /* Final do container */
+        }
+
+        .container-center-justified {
+            display: flex;
+            justify-content: center;
+            background-color: aliceblue;
+            /* Centralizado */
+        }
+
+        .container-space-between {
+            display: flex;
+            justify-content: space-between;
+            background-color: aliceblue;
+            /* Espaço entre os itens */
+        }
+
+        .container-space-around {
+            display: flex;
+            justify-content: space-around;
+            background-color: aliceblue;
+            /* Espaço ao redor dos itens */
+        }
+
+        .container-space-evenly {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: aliceblue;
+            /* Espaço uniforme */
+        }
+
+        .item {
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <head>
+        <h1>justify-content - Flexbox - Exemplo de WebDesign</h1>
+    </head>
+    <main>
+        <div class="container-center">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+        </div>
+
+        <div class="container-end">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+        </div>
+
+        <div class="container-center-justified">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+        </div>
+
+        <div class="container-space-between">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+        </div>
+
+        <div class="container-space-around">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+        </div>
+
+        <div class="container-space-evenly">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+        </div>
+    </main>
+</body>
+
+</html>
