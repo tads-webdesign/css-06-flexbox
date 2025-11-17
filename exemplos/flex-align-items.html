@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-items - Flexbox - Exemplo de WebDesign</title>
+    <style>
+        * {
+            margin: 6px;
+        }
+
+        .container-align {
+            display: flex;
+            height: 200px;
+            align-items: stretch;
+            /* Estica os itens (padrão) */
+            background-color: aliceblue;
+        }
+
+        .container-align-start {
+            display: flex;
+            height: 200px;
+            align-items: flex-start;
+            /* Topo do container */
+            background-color: aliceblue;
+        }
+
+        .container-align-end {
+            display: flex;
+            height: 200px;
+            align-items: flex-end;
+            /* Base do container */
+            background-color: aliceblue;
+        }
+
+        .container-align-center {
+            display: flex;
+            height: 200px;
+            align-items: center;
+            /* Centro vertical */
+            background-color: aliceblue;
+        }
+
+        .container-align-baseline {
+            display: flex;
+            height: 200px;
+            align-items: baseline;
+            /* Linha base do texto */
+            background-color: aliceblue;
+        }
+
+        .item {
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .small {
+            height: 50px;
+        }
+
+        .medium {
+            height: 80px;
+        }
+
+        .large {
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <head>
+        <h1>align-items - Flexbox - Exemplo de WebDesign</h1>
+    </head>
+    <main>
+        <div class="container-align">
+            <div class="item small">Pequeno</div>
+            <div class="item medium">Médio</div>
+            <div class="item large">Grande</div>
+        </div>
+
+        <div class="container-align-start">
+            <div class="item small">Pequeno</div>
+            <div class="item medium">Médio</div>
+            <div class="item large">Grande</div>
+        </div>
+
+        <div class="container-align-end">
+            <div class="item small">Pequeno</div>
+            <div class="item medium">Médio</div>
+            <div class="item large">Grande</div>
+        </div>
+
+        <div class="container-align-center">
+            <div class="item small">Pequeno</div>
+            <div class="item medium">Médio</div>
+            <div class="item large">Grande</div>
+        </div>
+
+        <div class="container-align-baseline">
+            <div class="item small">Pequeno</div>
+            <div class="item medium">Médio</div>
+            <div class="item large">Grande</div>
+        </div>
+
+    </main>
+</body>
+
+</html>

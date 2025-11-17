@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-direction - Flexbox - Exemplo de WebDesign</title>
+    <style>
+        * {
+            margin: 5px;
+        }
+
+        .container-row {
+            display: flex;
+            flex-direction: row;
+            background-color: aliceblue;
+            /* Padrão: da esquerda para direita */
+        }
+
+        .container-row-reverse {
+            display: flex;
+            flex-direction: row-reverse;
+            background-color: aliceblue;
+            /* Da direita para esquerda */
+        }
+
+        .container-column {
+            display: flex;
+            flex-direction: column;
+            background-color: beige;
+            /* De cima para baixo */
+        }
+
+        .container-column-reverse {
+            display: flex;
+            flex-direction: column-reverse;
+            background-color: beige;
+            /* De baixo para cima */
+        }
+
+        .item {
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <head>
+        <h1>flex-direction - Flexbox - Exemplo de WebDesign</h1>
+    </head>
+    <main>
+        <div class="container-row">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+        <div class="container-row-reverse">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+
+        <div class="container-column">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+
+        <div class="container-column-reverse">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </main>
+</body>
+
+</html>

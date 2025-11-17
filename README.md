@@ -1,9 +1,9 @@
 # Tutorial Completo: Layout Responsivo com Flexbox
 
 ## Índice
-1. [Conceito de Flexbox e quando usar](#conceito-de-flexbox-e-quando-usar)
-2. [Container Flex](#container-flex)
-3. [Items Flex](#items-flex)
+1. [Conceito de Flexbox e quando usar](#1-conceito-de-flexbox-e-quando-usar)
+2. [Container Flex](#2-container-flex)
+3. [Items Flex](#3-items-flex)
 4. [Alinhamento e Distribuição de Espaço](#alinhamento-e-distribuicao-de-espaco)
 5. [Casos de Uso Práticos](#casos-de-uso-praticos)
 6. [Exemplo Completo](#exemplo-completo)
@@ -11,13 +11,14 @@
 
 ---
 
-## Conceito de Flexbox e quando usar
+## 1. Conceito de Flexbox e quando usar
 
-### O que é Flexbox?
+### 1.1. O que é Flexbox?
 
-Flexbox (Flexible Box Layout) é um módulo CSS3 que facilita o design de estruturas de layout flexíveis e responsivas sem usar float ou position. Ele permite distribuir espaço entre itens de um container e alinhá-los de forma eficiente, mesmo quando seus tamanhos são desconhecidos ou dinâmicos.
+Flexbox (Flexible Box Layout) é um módulo CSS3 que facilita o design de estruturas de layout flexíveis e responsivas sem usar float ou position.
+Ele permite distribuir espaço entre itens de um container e alinhá-los de forma eficiente, mesmo quando seus tamanhos são desconhecidos ou dinâmicos.
 
-### Quando usar Flexbox?
+### 1.2. Quando usar Flexbox?
 
 Use Flexbox quando você precisar:
 - Alinhar elementos em uma única dimensão (linha ou coluna)
@@ -27,7 +28,9 @@ Use Flexbox quando você precisar:
 - Ordenar elementos visualmente sem alterar o HTML
 - Criar componentes como navbars, cards, footers, formulários
 
-### Exemplo básico
+### 1.3. Exemplo básico
+
+[Exemplo de código](exemplos/flex-basico.html)
 
 ```html
 <!DOCTYPE html>
@@ -70,16 +73,25 @@ Use Flexbox quando você precisar:
 
 ---
 
-## Container Flex
+## 2. Container Flex
 
-O container flex é o elemento pai que controla o layout de seus filhos (flex items). Para criar um container flex, use `display: flex` ou `display: inline-flex`.
+O container flex é o elemento pai que controla o layout de seus filhos (flex items). 
+Para criar um container flex, use `display: flex` ou `display: inline-flex`.
 
-### 1. `display: flex`
+### 2.1. `display: flex`
 
 Transforma um elemento em um flex container, fazendo com que seus filhos diretos se tornem flex items.
 
+[Exemplo de código](exemplos/flex-container.html)
+
 ```html
 <div class="flex-container">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+</div>
+
+<div class="flex-container-inline">
     <div>Item 1</div>
     <div>Item 2</div>
     <div>Item 3</div>
@@ -98,9 +110,11 @@ Transforma um elemento em um flex container, fazendo com que seus filhos diretos
 }
 ```
 
-### 2. `flex-direction`
+### 2.2. `flex-direction`
 
 Define a direção principal em que os flex items são colocados no container.
+
+[exemplo de código](exemplos/flex-direction.html)
 
 ```html
 <div class="container-row">
@@ -145,9 +159,11 @@ Define a direção principal em que os flex items são colocados no container.
 }
 ```
 
-### 3. `justify-content`
+### 2.3. `justify-content`
 
 Alinha os flex items ao longo do eixo principal (horizontal se flex-direction: row).
+
+[Exemplo de código](exemplos/flex-justify-content.html)
 
 ```html
 <div class="container-center">
@@ -189,9 +205,11 @@ Alinha os flex items ao longo do eixo principal (horizontal se flex-direction: r
 }
 ```
 
-### 4. `align-items`
+### 2.4. `align-items`
 
 Alinha os flex items ao longo do eixo transversal (vertical se flex-direction: row).
+
+[Exemplo de código](exemplos/flex-align-items.html)
 
 ```html
 <div class="container-align">
@@ -237,7 +255,7 @@ Alinha os flex items ao longo do eixo transversal (vertical se flex-direction: r
 .large { height: 120px; }
 ```
 
-### Outras propriedades importantes do container
+### 2.5. Outras propriedades importantes do container
 
 ```css
 .container-completo {
@@ -250,13 +268,15 @@ Alinha os flex items ao longo do eixo transversal (vertical se flex-direction: r
 
 ---
 
-## Items Flex
+## 3. Items Flex
 
 Os items flex são os filhos diretos de um container flex. Você pode controlar como eles crescem, encolhem e seu tamanho base.
 
-### 1. `flex-grow`
+### 3.1. `flex-grow`
 
 Define a capacidade de um item crescer, se necessário. O valor padrão é 0 (não cresce).
+
+[Exemplo de código](exemplos/flex-grow.html)
 
 ```html
 <div class="container">
@@ -282,9 +302,11 @@ Define a capacidade de um item crescer, se necessário. O valor padrão é 0 (n�
 }
 ```
 
-### 2. `flex-shrink`
+### 3.2. `flex-shrink`
 
 Define a capacidade de um item encolher, se necessário. O valor padrão é 1 (pode encolher).
+
+[Exemplo de código](exemplos/flex-shrink.html)
 
 ```html
 <div class="container-narrow">

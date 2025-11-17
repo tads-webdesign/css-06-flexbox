@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display - Flexbox - Exemplo de WebDesign</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Container em bloco */
+        .flex-container {
+            display: flex;
+            background-color: azure;
+            padding: 6px;
+        }
+
+        /* Container inline */
+        .flex-container-inline {
+            display: inline-flex;
+            background-color: antiquewhite;
+            padding: 6px;
+        }
+
+        .item {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <head>
+        <h1>display - Flexbox - Exemplo de WebDesign</h1>
+    </head>
+    <main>
+        <div class="flex-container">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+        <div class="flex-container-inline">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+    </main>
+</body>
+
+</html>
