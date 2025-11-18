@@ -4,9 +4,9 @@
 1. [Conceito de Flexbox e quando usar](#1-conceito-de-flexbox-e-quando-usar)
 2. [Container Flex](#2-container-flex)
 3. [Items Flex](#3-items-flex)
-4. [Alinhamento e Distribuição de Espaço](#alinhamento-e-distribuicao-de-espaco)
-5. [Casos de Uso Práticos](#casos-de-uso-praticos)
-6. [Exemplo Completo](#exemplo-completo)
+4. [Alinhamento e Distribuição de Espaço](#4-alinhamento-e-distribuicao-de-espaco)
+5. [Casos de Uso Práticos](#5-casos-de-uso-praticos)
+6. [Exemplo Completo](#6-exemplo-completo)
 7. [Links e Conteúdos Avançados](#links-e-conteudos-avancados)
 
 ---
@@ -515,7 +515,9 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 
 ## 5. Casos de Uso Práticos
 
-### 1. Navbar Responsiva
+### 5.1. Navbar Responsiva
+
+[Exemplo de código](exemplos/5-1-navbar.html)
 
 ```html
 <!DOCTYPE html>
@@ -599,7 +601,9 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 </html>
 ```
 
-### 2. Cards Responsivos
+### 5.2. Cards Responsivos
+
+[Exemplo de código](exemplos/5-2-cards.html)
 
 ```html
 <!DOCTYPE html>
@@ -734,7 +738,9 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 </html>
 ```
 
-### 3. Footer Responsivo
+### 5.3. Footer Responsivo
+
+[Exemplo de código](exemplos/5-3-footer.html)
 
 ```html
 <!DOCTYPE html>
@@ -900,9 +906,11 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 
 ---
 
-## Exemplo Completo
+## 6. Exemplo Completo
 
 Aqui está um exemplo completo de uma página web responsiva usando todos os conceitos de Flexbox apresentados:
+
+[Exemplo de código](index.html)
 
 ```html
 <!DOCTYPE html>

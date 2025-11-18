@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Completa - Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        .nav-cta {
+            background-color: #3498db;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .nav-cta:hover {
+            background-color: #2980b9;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 5%;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1 1 400px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover,
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image {
+            flex: 1 1 400px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .placeholder-image {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            padding: 5rem 5%;
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            flex: 1 1 300px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .feature-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        /* PRICING SECTION */
+        .pricing {
+            padding: 5rem 5%;
+            background-color: white;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            flex: 1 1 280px;
+            max-width: 350px;
+            background-color: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+            border-color: #3498db;
+        }
+
+        .pricing-card.featured {
+            border-color: #3498db;
+            box-shadow: 0 5px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-period {
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pricing-button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pricing-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 5% 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer-section {
+            flex: 1 1 250px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #34495e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: #3498db;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 1rem;
+            text-align: center;
+            color: #95a5a6;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">FlexSite</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Recursos</a></li>
+            <li><a href="#pricing">Preços</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+        <button class="nav-cta">Começar Grátis</button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Construa Sites Incríveis com Flexbox</h1>
+                <p>Aprenda a criar layouts modernos, responsivos e elegantes usando o poder do CSS Flexbox.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Começar Agora</button>
+                    <button class="btn-secondary">Ver Demo</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="placeholder-image">🚀</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">
+        <h2 class="section-title">Recursos Principais</h2>
+        <p class="section-subtitle">Tudo que você precisa para criar layouts profissionais</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Rápido e Eficiente</h3>
+                <p>Crie layouts complexos com poucas linhas de código CSS.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Totalmente Responsivo</h3>
+                <p>Seus layouts se adaptam perfeitamente a qualquer tamanho de tela.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Flexível e Poderoso</h3>
+                <p>Controle total sobre alinhamento e distribuição de espaço.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3>Fácil de Usar</h3>
+                <p>API intuitiva que facilita o aprendizado e desenvolvimento.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Suporte Universal</h3>
+                <p>Compatível com todos os navegadores modernos.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Documentação Completa</h3>
+                <p>Tutoriais e exemplos para todos os níveis de experiência.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Escolha Seu Plano</h2>
+        <p class="section-subtitle">Planos flexíveis para todas as necessidades</p>
+
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Básico</h3>
+                <div class="price">R$ 29</div>
+                <div class="price-period">por mês</div>
+                <ul class="pricing-features">
+                    <li>✓ 5 Projetos</li>
+                    <li>✓ Suporte por Email</li>
+                    <li>✓ Documentação</li>
+                    <li>✓ Atualizações</li>
+                </ul>
+                <button class="pricing-button">Escolher Plano</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Profissional</h3>
+                <div class="price">R$ 79</div>
+                <div class="price-period">por mês</div>
+                <ul class="pricing-features">
+                    <li>✓ Projetos Ilimitados</li>
+                    <li>✓ Suporte Prioritário</li>
+                    <li>✓ Templates Premium</li>
+                    <li>✓ Recursos Avançados</li>
+                </ul>
+                <button class="pricing-button">Escolher Plano</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="price">R$ 199</div>
+                <div class="price-period">por mês</div>
+                <ul class="pricing-features">
+                    <li>✓ Tudo do Pro</li>
+                    <li>✓ Suporte 24/7</li>
+                    <li>✓ Customização</li>
+                    <li>✓ Treinamento Dedicado</li>
+                </ul>
+                <button class="pricing-button">Escolher Plano</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FlexSite</h3>
+                <p>Construindo o futuro da web com tecnologias modernas e acessíveis.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Produto</h3>
+                <ul>
+                    <li><a href="#features">Recursos</a></li>
+                    <li><a href="#pricing">Preços</a></li>
+                    <li><a href="#">Casos de Uso</a></li>
+                    <li><a href="#">Atualizações</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">Documentação</a></li>
+                    <li><a href="#">Tutoriais</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Parceiros</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 FlexSite. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
