@@ -30,7 +30,7 @@ Use Flexbox quando você precisar:
 
 ### 1.3. Exemplo básico
 
-[Exemplo de código](exemplos/flex-basico.html)
+[Exemplo de código](exemplos/1-1-flex-basico.html)
 
 ```html
 <!DOCTYPE html>
@@ -82,7 +82,7 @@ Para criar um container flex, use `display: flex` ou `display: inline-flex`.
 
 Transforma um elemento em um flex container, fazendo com que seus filhos diretos se tornem flex items.
 
-[Exemplo de código](exemplos/flex-container.html)
+[Exemplo de código](exemplos/2-1-flex-container.html)
 
 ```html
 <div class="flex-container">
@@ -114,7 +114,7 @@ Transforma um elemento em um flex container, fazendo com que seus filhos diretos
 
 Define a direção principal em que os flex items são colocados no container.
 
-[exemplo de código](exemplos/flex-direction.html)
+[exemplo de código](exemplos/2-2-flex-direction.html)
 
 ```html
 <div class="container-row">
@@ -163,7 +163,7 @@ Define a direção principal em que os flex items são colocados no container.
 
 Alinha os flex items ao longo do eixo principal (horizontal se flex-direction: row).
 
-[Exemplo de código](exemplos/flex-justify-content.html)
+[Exemplo de código](exemplos/2-3-flex-justify-content.html)
 
 ```html
 <div class="container-center">
@@ -209,7 +209,7 @@ Alinha os flex items ao longo do eixo principal (horizontal se flex-direction: r
 
 Alinha os flex items ao longo do eixo transversal (vertical se flex-direction: row).
 
-[Exemplo de código](exemplos/flex-align-items.html)
+[Exemplo de código](exemplos/2-4-flex-align-items.html)
 
 ```html
 <div class="container-align">
