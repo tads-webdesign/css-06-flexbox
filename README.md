@@ -276,7 +276,7 @@ Os items flex são os filhos diretos de um container flex. Você pode controlar 
 
 Define a capacidade de um item crescer, se necessário. O valor padrão é 0 (não cresce).
 
-[Exemplo de código](exemplos/flex-grow.html)
+[Exemplo de código](exemplos/3-1-flex-grow.html)
 
 ```html
 <div class="container">
@@ -306,7 +306,7 @@ Define a capacidade de um item crescer, se necessário. O valor padrão é 0 (n�
 
 Define a capacidade de um item encolher, se necessário. O valor padrão é 1 (pode encolher).
 
-[Exemplo de código](exemplos/flex-shrink.html)
+[Exemplo de código](exemplos/3-2-flex-shrink.html)
 
 ```html
 <div class="container-narrow">
@@ -338,9 +338,11 @@ Define a capacidade de um item encolher, se necessário. O valor padrão é 1 (p
 }
 ```
 
-### 3. `flex-basis`
+### 3.3. `flex-basis`
 
 Define o tamanho inicial de um item antes do espaço restante ser distribuído.
+
+[Exemplo de código](exemplos/3-3-flex-basis.html)
 
 ```html
 <div class="container">
@@ -368,9 +370,11 @@ Define o tamanho inicial de um item antes do espaço restante ser distribuído.
 }
 ```
 
-### 4. `flex` (shorthand)
+### 3.4. `flex` (shorthand)
 
 A propriedade `flex` é uma forma abreviada de definir `flex-grow`, `flex-shrink` e `flex-basis`.
+
+[Exemplo de código](exemplos/3-4-flex-shorthand.html)
 
 ```html
 <div class="container">
@@ -402,7 +406,7 @@ A propriedade `flex` é uma forma abreviada de definir `flex-grow`, `flex-shrink
 }
 ```
 
-### Outras propriedades importantes dos items
+### 3.5. Outras propriedades importantes dos items
 
 ```css
 .item-especial {
@@ -413,7 +417,7 @@ A propriedade `flex` é uma forma abreviada de definir `flex-grow`, `flex-shrink
 
 ---
 
-## Alinhamento e Distribuição de Espaço
+## 4. Alinhamento e Distribuição de Espaço
 
 ### Centralização Perfeita
 
