@@ -419,9 +419,11 @@ A propriedade `flex` é uma forma abreviada de definir `flex-grow`, `flex-shrink
 
 ## 4. Alinhamento e Distribuição de Espaço
 
-### Centralização Perfeita
+### 4.1. Centralização Perfeita
 
 Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizontalmente.
+
+[Exemplo de código](exemplos/4-1-flex-center.html)
 
 ```html
 <div class="center-container">
@@ -449,8 +451,9 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 }
 ```
 
-### Distribuição de Espaço com Gap
+### 4.2. Distribuição de Espaço com Gap
 
+[Exemplo de código](exemplos/4-2-gap.html)
 ```html
 <div class="spaced-container">
     <div class="card">Card 1</div>
@@ -475,7 +478,9 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 }
 ```
 
-### Combinações Práticas
+### 4.3. Combinações Práticas
+
+[Exemplo de código](exemplos/4-3-combinacoes-praticas.html)
 
 ```css
 /* Layout com sidebar e conteúdo principal */
@@ -508,7 +513,7 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 
 ---
 
-## Casos de Uso Práticos
+## 5. Casos de Uso Práticos
 
 ### 1. Navbar Responsiva
 

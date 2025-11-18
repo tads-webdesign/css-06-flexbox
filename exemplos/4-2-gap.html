@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset=" UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex gap - Exemplo de WebDesign</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 6px;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #f5f6fa;
+        }
+
+        .spaced-container {
+            display: flex;
+            gap: 20px;
+            /* Espaço entre todos os itens */
+            padding: 20px;
+            background-color: linen;
+        }
+
+        /* Gaps específicos */
+        .container-with-gaps {
+            display: flex;
+            row-gap: 20px;
+            /* Espaço vertical */
+            column-gap: 10px;
+            /* Espaço horizontal */
+            flex-wrap: wrap;
+            background-color: linen;
+        }
+
+        .card {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 100px;
+            /* Itens flexíveis */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>flex gap - Exemplo de WebDesign</h1>
+    </header>
+    <main>
+        <h2>Exemplo com gap</h2>
+        <div class="spaced-container">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+        </div>
+
+        <h2>Exemplo com row-gap e column-gap</h2>
+        <div class="container-with-gaps">
+            <div class="card">Card A</div>
+            <div class="card">Card B</div>
+            <div class="card">Card C</div>
+            <div class="card">Card D</div>
+            <div class="card">Card E</div>
+        </div>
+    </main>
+</body>
+
+</html>
