@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex (shorthand) - Exemplo de WebDesign</title>
+    <style>
+        * {
+            margin: 6px;
+        }
+
+        .item {
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .flex-1 {
+            flex: 1;
+            /* flex-grow: 1; flex-shrink: 1; flex-basis: 0%; */
+        }
+
+        .flex-2 {
+            flex: 2;
+            /* flex-grow: 2; flex-shrink: 1; flex-basis: 0%; */
+        }
+
+        .flex-custom {
+            flex: 1 2 200px;
+            /* flex-grow: 1; flex-shrink: 2; flex-basis: 200px; */
+        }
+
+        .flex-none {
+            flex: none;
+            /* 0 0 auto - não cresce nem encolhe */
+        }
+
+        .flex-auto {
+            flex: auto;
+            /* 1 1 auto - flexível baseado no conteúdo */
+        }
+
+        .container {
+            display: flex;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>flex (shorthand) - Flexbox - Exemplo de WebDesign</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="item flex-1">flex: 1</div>
+            <div class="item flex-2">flex: 2</div>
+            <div class="item flex-custom">flex: 1 2 200px</div>
+            <div class="item flex-none">flex: none</div>
+            <div class="item flex-auto">flex: auto</div>
+        </div>
+    </main>
+</body>
+
+</html>

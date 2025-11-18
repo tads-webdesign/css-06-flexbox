@@ -4,9 +4,9 @@
 1. [Conceito de Flexbox e quando usar](#1-conceito-de-flexbox-e-quando-usar)
 2. [Container Flex](#2-container-flex)
 3. [Items Flex](#3-items-flex)
-4. [Alinhamento e Distribuição de Espaço](#alinhamento-e-distribuicao-de-espaco)
-5. [Casos de Uso Práticos](#casos-de-uso-praticos)
-6. [Exemplo Completo](#exemplo-completo)
+4. [Alinhamento e Distribuição de Espaço](#4-alinhamento-e-distribuicao-de-espaco)
+5. [Casos de Uso Práticos](#5-casos-de-uso-praticos)
+6. [Exemplo Completo](#6-exemplo-completo)
 7. [Links e Conteúdos Avançados](#links-e-conteudos-avancados)
 
 ---
@@ -30,7 +30,7 @@ Use Flexbox quando você precisar:
 
 ### 1.3. Exemplo básico
 
-[Exemplo de código](exemplos/flex-basico.html)
+[Exemplo de código](exemplos/1-1-flex-basico.html)
 
 ```html
 <!DOCTYPE html>
@@ -82,7 +82,7 @@ Para criar um container flex, use `display: flex` ou `display: inline-flex`.
 
 Transforma um elemento em um flex container, fazendo com que seus filhos diretos se tornem flex items.
 
-[Exemplo de código](exemplos/flex-container.html)
+[Exemplo de código](exemplos/2-1-flex-container.html)
 
 ```html
 <div class="flex-container">
@@ -114,7 +114,7 @@ Transforma um elemento em um flex container, fazendo com que seus filhos diretos
 
 Define a direção principal em que os flex items são colocados no container.
 
-[exemplo de código](exemplos/flex-direction.html)
+[exemplo de código](exemplos/2-2-flex-direction.html)
 
 ```html
 <div class="container-row">
@@ -163,7 +163,7 @@ Define a direção principal em que os flex items são colocados no container.
 
 Alinha os flex items ao longo do eixo principal (horizontal se flex-direction: row).
 
-[Exemplo de código](exemplos/flex-justify-content.html)
+[Exemplo de código](exemplos/2-3-flex-justify-content.html)
 
 ```html
 <div class="container-center">
@@ -209,7 +209,7 @@ Alinha os flex items ao longo do eixo principal (horizontal se flex-direction: r
 
 Alinha os flex items ao longo do eixo transversal (vertical se flex-direction: row).
 
-[Exemplo de código](exemplos/flex-align-items.html)
+[Exemplo de código](exemplos/2-4-flex-align-items.html)
 
 ```html
 <div class="container-align">
@@ -276,7 +276,7 @@ Os items flex são os filhos diretos de um container flex. Você pode controlar 
 
 Define a capacidade de um item crescer, se necessário. O valor padrão é 0 (não cresce).
 
-[Exemplo de código](exemplos/flex-grow.html)
+[Exemplo de código](exemplos/3-1-flex-grow.html)
 
 ```html
 <div class="container">
@@ -306,7 +306,7 @@ Define a capacidade de um item crescer, se necessário. O valor padrão é 0 (n�
 
 Define a capacidade de um item encolher, se necessário. O valor padrão é 1 (pode encolher).
 
-[Exemplo de código](exemplos/flex-shrink.html)
+[Exemplo de código](exemplos/3-2-flex-shrink.html)
 
 ```html
 <div class="container-narrow">
@@ -338,9 +338,11 @@ Define a capacidade de um item encolher, se necessário. O valor padrão é 1 (p
 }
 ```
 
-### 3. `flex-basis`
+### 3.3. `flex-basis`
 
 Define o tamanho inicial de um item antes do espaço restante ser distribuído.
+
+[Exemplo de código](exemplos/3-3-flex-basis.html)
 
 ```html
 <div class="container">
@@ -368,9 +370,11 @@ Define o tamanho inicial de um item antes do espaço restante ser distribuído.
 }
 ```
 
-### 4. `flex` (shorthand)
+### 3.4. `flex` (shorthand)
 
 A propriedade `flex` é uma forma abreviada de definir `flex-grow`, `flex-shrink` e `flex-basis`.
+
+[Exemplo de código](exemplos/3-4-flex-shorthand.html)
 
 ```html
 <div class="container">
@@ -402,7 +406,7 @@ A propriedade `flex` é uma forma abreviada de definir `flex-grow`, `flex-shrink
 }
 ```
 
-### Outras propriedades importantes dos items
+### 3.5. Outras propriedades importantes dos items
 
 ```css
 .item-especial {
@@ -413,11 +417,13 @@ A propriedade `flex` é uma forma abreviada de definir `flex-grow`, `flex-shrink
 
 ---
 
-## Alinhamento e Distribuição de Espaço
+## 4. Alinhamento e Distribuição de Espaço
 
-### Centralização Perfeita
+### 4.1. Centralização Perfeita
 
 Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizontalmente.
+
+[Exemplo de código](exemplos/4-1-flex-center.html)
 
 ```html
 <div class="center-container">
@@ -445,8 +451,9 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 }
 ```
 
-### Distribuição de Espaço com Gap
+### 4.2. Distribuição de Espaço com Gap
 
+[Exemplo de código](exemplos/4-2-gap.html)
 ```html
 <div class="spaced-container">
     <div class="card">Card 1</div>
@@ -471,7 +478,9 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 }
 ```
 
-### Combinações Práticas
+### 4.3. Combinações Práticas
+
+[Exemplo de código](exemplos/4-3-combinacoes-praticas.html)
 
 ```css
 /* Layout com sidebar e conteúdo principal */
@@ -504,9 +513,11 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 
 ---
 
-## Casos de Uso Práticos
+## 5. Casos de Uso Práticos
 
-### 1. Navbar Responsiva
+### 5.1. Navbar Responsiva
+
+[Exemplo de código](exemplos/5-1-navbar.html)
 
 ```html
 <!DOCTYPE html>
@@ -590,7 +601,9 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 </html>
 ```
 
-### 2. Cards Responsivos
+### 5.2. Cards Responsivos
+
+[Exemplo de código](exemplos/5-2-cards.html)
 
 ```html
 <!DOCTYPE html>
@@ -725,7 +738,9 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 </html>
 ```
 
-### 3. Footer Responsivo
+### 5.3. Footer Responsivo
+
+[Exemplo de código](exemplos/5-3-footer.html)
 
 ```html
 <!DOCTYPE html>
@@ -891,9 +906,11 @@ Um dos usos mais comuns do Flexbox é centralizar elementos vertical e horizonta
 
 ---
 
-## Exemplo Completo
+## 6. Exemplo Completo
 
 Aqui está um exemplo completo de uma página web responsiva usando todos os conceitos de Flexbox apresentados:
+
+[Exemplo de código](index.html)
 
 ```html
 <!DOCTYPE html>

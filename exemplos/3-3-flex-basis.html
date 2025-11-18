@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-basis - Flexbox - Exemplo de WebDesign</title>
+    <style>
+        * {
+            margin: 6px;
+        }
+
+        .item {
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .basis-auto {
+            flex-basis: auto;
+            /* Baseado no conteúdo (padrão) */
+        }
+
+        .basis-200 {
+            flex-basis: 200px;
+            /* Tamanho inicial de 200px */
+        }
+
+        .basis-30 {
+            flex-basis: 30%;
+            /* Tamanho inicial de 30% */
+        }
+
+        .basis-0 {
+            flex-basis: 0;
+            /* Ignora o tamanho do conteúdo */
+        }
+
+        .container {
+            display: flex;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>flex-basis - Flexbox - Exemplo de WebDesign</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="item basis-auto">auto</div>
+            <div class="item basis-200">200px</div>
+            <div class="item basis-30">30%</div>
+            <div class="item basis-0">0</div>
+        </div>
+
+    </main>
+</body>
+
+</html>
